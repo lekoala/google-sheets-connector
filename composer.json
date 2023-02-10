@@ -1,0 +1,27 @@
+{
+  "name": "lekoala/sheets-connector-api",
+  "type": "project",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "Lekoala\\SheetsConnectorApi\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Thomas",
+      "email": "thomas@lekoala.be"
+    }
+  ],
+  "minimum-stability": "dev",
+  "require": {
+    "google/apiclient": "2.12.1",
+    "composer/ca-bundle": "1.x-dev"
+  },
+  "scripts": {
+    "server": "php -S localhost:8002 -t public/",
+    "post-install-cmd": [
+      "php ./bin/cleanup-google-vendors.php"
+    ]
+  }
+}
